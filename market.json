@@ -2,7 +2,7 @@
   "name": "DsPlayer 综合插件市场",
   "desc": "dsplayer 插件市场（上游两条线合并镜像 · 只增不删 · 上游删包也能装）",
   "logo": "icons/market.png",
-  "updatedAt": "2026-10-18T21:49:37+08:00",
+  "updatedAt": "2026-10-18T22:03:56+08:00",
   "plugins": [
     {
       "id": "musick-api",
@@ -991,17 +991,17 @@
       "name": "蓝莓短剧",
       "author": "JmwPower",
       "desc": "蓝莓短剧站点适配插件,需口令",
-      "version": "1.0.17",
+      "version": "1.0.18",
       "type": "import",
-      "size": 3383647,
-      "url": "packages/lanmei-lite-1.0.17.zip",
+      "size": 3383683,
+      "url": "packages/lanmei-lite-1.0.18.zip",
       "icon": "icons/lanmei.png",
       "tags": [
         "网络",
         "服务"
       ],
-      "changelog": "v1.0.17：修复站点登录轮换会话后口令门态丢失导致的全集解析失败与资料/绑定状态异常；解析撞门自动补门重试。",
-      "md5": "8338c9ec0336c0b4a9e8779a2213522d",
+      "changelog": "v1.0.18：修复站点登录轮换会话后口令门态丢失导致的全集解析失败与资料/绑定状态异常；解析撞门自动补门重试。",
+      "md5": "394f12c3edf8a0613204981303c011b4",
       "category": "env",
       "platforms": [
         "android"
@@ -1117,13 +1117,13 @@
       "name": "炫彩主页web源",
       "author": "JmwPower",
       "desc": "稻壳适配多风格炫彩主页,安装后web源选ui即可,ui来自LZ",
-      "version": "1.0.4",
+      "version": "1.0.5",
       "type": "source",
       "category": "app",
-      "url": "packages/my-home-1.0.4.zip",
-      "size": 243265,
-      "md5": "9888cb7483f39430ceab7d0528d8dd75",
-      "changelog": "v1.0.4：更新分类筛选。",
+      "url": "packages/my-home-1.0.5.zip",
+      "size": 245452,
+      "md5": "70b3cdf4b4059592fae62b39df94357e",
+      "changelog": "v1.0.5：更新主页样式包。",
       "tags": [
         "本地源",
         "主页"
