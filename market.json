@@ -2,7 +2,7 @@
   "name": "DsPlayer 综合插件市场",
   "desc": "dsplayer 插件市场（上游两条线合并镜像 · 只增不删 · 上游删包也能装）",
   "logo": "icons/market.png",
-  "updatedAt": "2026-10-19T14:02:40+08:00",
+  "updatedAt": "2026-10-19T14:19:45+08:00",
   "plugins": [
     {
       "id": "musick-api",
@@ -1241,6 +1241,30 @@
         "android",
         "win32"
       ]
+    },
+    {
+      "id": "php-arm32",
+      "name": "PHP 运行时（32 位设备）",
+      "author": "hjdhnx",
+      "desc": "PHP 7.3.22 运行时（armeabi-v7a / ARMv7，NDK r16b 构建，动态链接 bionic: libc/libm/libdl）+ t4_demo 站点源种子（T4-PHP 预置导入时释放到 sdcard/dsplayer/server/php/t4_demo，docroot 指 sdcard 可加改源）。与 php 1.3.2（arm64）同一包结构、同一 t4_demo，仅二进制换 32 位，供 armeabi-v7a 设备使用。供「服务」页引用：drpys 的 php 桥（PHP_PATH）与 T4-PHP 站点服务均引用此包；与 64 位 php 同一安装目录，二选一。",
+      "version": "1.3.2",
+      "type": "import",
+      "size": 11922173,
+      "url": "packages/php-1.3.2-arm32.zip",
+      "icon": "icons/php.png",
+      "tags": [
+        "运行时",
+        "服务"
+      ],
+      "md5": "b84218027ea1328cae16cc623ecc587d",
+      "changelog": "首个 32 位包：PHP 7.3.22（NDK r16b，动态链接 bionic）+ 同版本 t4_demo 种子（37 文件），结构与 php 1.3.2 一致，仅 bin/php 换为 ARMv7 32 位。armeabi-v7a 设备专用。",
+      "platforms": [
+        "android"
+      ],
+      "abis": [
+        "armeabi-v7a"
+      ],
+      "category": "env"
     }
   ]
 }
