@@ -2,7 +2,7 @@
   "name": "DsPlayer 综合插件市场",
   "desc": "dsplayer 插件市场（上游两条线合并镜像 · 只增不删 · 上游删包也能装）",
   "logo": "icons/market.png",
-  "updatedAt": "2026-10-19T14:19:45+08:00",
+  "updatedAt": "2026-10-19T15:30:00Z",
   "plugins": [
     {
       "id": "musick-api",
@@ -611,7 +611,9 @@
       "changelog": "首录：MT 管理器 2.14.5（versionCode 24011893，versionName 2.14.5-clone 克隆版，包名 bin.mt.plus.canary）。全 ABI（arm64-v8a/armeabi-v7a/x86/x86_64），包体 26.5MB 走 packages/ 常规分发。",
       "platforms": [
         "android"
-      ]
+      ],
+      "delisted": true,
+      "delistedNote": "转发专有第三方应用（MT管理器）无再分发授权，下架停止分发。条目与安装包保留在本仓库不删除（已装用户本地记录不受影响），如需恢复仅需去除本条标记。"
     },
     {
       "id": "aigw",

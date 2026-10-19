@@ -45,7 +45,7 @@ DsPlayer 插件官方市场仓库：`market.json` 为市场索引（在线安装
 | 演示源包 | `demo-sources` | 1.2.8 | **source**（源码包；platforms=android+win32；html/ 含 bilibili 完整源 + Web 源演示 + 歪比巴卜 booster + fm 桥自验探针（fm-selftest.html / gm-probe.web.json+js）——需本体 ≥0.9.7） | `packages/demo-sources-1.2.8.zip` |
 | catLib 引擎库包 | `catlib` | 1.0.0 | **source**（源码包；引擎库；platforms=android+win32） | `packages/catlib-1.0.0.zip` |
 | IDM+ 下载器（1DM+） | `idmplus` | 18.2 | **apk**（系统安装；Release 分发；platforms=android） | `idmplus-18.2-CN.apk` |
-| MT管理器 | `mtmanager` | 2.14.5 | **apk**（系统安装；platforms=android） | `packages/mtmanager-2.14.5.apk` |
+| ~~MT管理器~~ | `mtmanager` | 2.14.5 | **apk**（系统安装；platforms=android）**⚠️ 已下架**（`delisted: true`——转发专有第三方应用无再分发授权，停止分发；条目与安装包保留在仓库不删除，去标记即可恢复上架） | `packages/mtmanager-2.14.5.apk` |
 | AI 聚合网关 | `aigw` | 2.2.0 | **apk**（系统安装；本地 OpenAI 兼容聚合网关；platforms=android） | `packages/aigw-2.2.0.apk` |
 | 小浣熊 | `raccoon` | 1.29 | **apk**（系统安装；本地 OpenAI 兼容 API 网关；platforms=android） | `packages/raccoon-1.29.apk` |
 | 智谱清言网关 | `zhipu-gw` | 1.5.10 | **apk**（系统安装；智谱清言本地网关；platforms=android） | `packages/zhipu-gw-1.5.10.apk` |
