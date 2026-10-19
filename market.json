@@ -2,7 +2,7 @@
   "name": "DsPlayer 综合插件市场",
   "desc": "dsplayer 插件市场（上游两条线合并镜像 · 只增不删 · 上游删包也能装）",
   "logo": "icons/market.png",
-  "updatedAt": "2026-10-19T07:39:31+08:00",
+  "updatedAt": "2026-10-19T01:32:38Z",
   "plugins": [
     {
       "id": "musick-api",
@@ -815,71 +815,71 @@
       "name": "DsPlayer 本体",
       "author": "DsPlayer",
       "desc": "影视聚合壳本体（Android）。插件式架构：播放器内核、爬虫引擎、源全部以插件形态安装。本条目永远只指向最新版（Android 禁止降级覆盖安装，低版本须先卸载再装）；历史版本保留在 NAS 共用目录，可自行下载后手动安装。",
-      "version": "0.9.14",
+      "version": "1.0.0",
       "type": "apk",
       "category": "app",
       "pkg": "com.dsplayer.ds_player",
-      "size": 18828551,
-      "url": "apk/DsPlayer-0.9.14-arm64.apk",
+      "size": 18922943,
+      "url": "apk/DsPlayer-1.0.0-arm64.apk",
       "icon": "icons/dsplayer.png",
       "tags": [
         "本体",
         "应用"
       ],
-      "md5": "b09ab36e00022e5e9880e266c950f33f",
+      "md5": "eb6ccc97343100ad4a1100cefeccac91",
       "abis": [
         "arm64-v8a"
       ],
       "platforms": [
         "android"
       ],
-      "changelog": "自动上架：DsPlayer 本体 0.9.14（2026-10-18 15:12）。"
+      "changelog": "自动上架：DsPlayer 本体 1.0.0（2026-10-19 09:32）。"
     },
     {
       "id": "dsplayer-arm32",
       "name": "DsPlayer 本体（32 位）",
       "author": "DsPlayer",
       "desc": "影视聚合壳本体（Android / armeabi-v7a 32 位）。只在 32 位 Android 设备（老手机、32 位电视盒子）上出现；64 位设备请装标准版（id dsplayer）。",
-      "version": "0.9.14",
+      "version": "1.0.0",
       "type": "apk",
       "category": "app",
       "pkg": "com.dsplayer.ds_player",
-      "size": 18706995,
-      "url": "apk/DsPlayer-0.9.14-arm32.apk",
+      "size": 18807395,
+      "url": "apk/DsPlayer-1.0.0-arm32.apk",
       "icon": "icons/dsplayer.png",
       "tags": [
         "本体",
         "应用"
       ],
-      "md5": "f0d1409391ad58584b4e5ffd3a13e0f0",
+      "md5": "318aae703dd3683fec2f263302e277ee",
       "abis": [
         "armeabi-v7a"
       ],
       "platforms": [
         "android"
       ],
-      "changelog": "自动上架：DsPlayer 本体（32 位） 0.9.14（2026-10-18 15:12）。"
+      "changelog": "自动上架：DsPlayer 本体（32 位） 1.0.0（2026-10-19 09:32）。"
     },
     {
       "id": "dsplayer-win",
       "name": "DsPlayer 本体（Windows）",
       "author": "DsPlayer",
       "desc": "影视聚合壳本体（Windows 64 位）。下载 7z 压缩包，解压即用。",
-      "version": "0.9.14",
+      "version": "1.0.0",
       "type": "apk",
       "category": "app",
-      "size": 26622896,
-      "url": "apk/DsPlayer-0.9.14-windows-x64.7z",
+      "size": 26690364,
+      "url": "apk/DsPlayer-1.0.0-windows-x64.7z",
       "icon": "icons/dsplayer.png",
       "tags": [
         "本体",
         "应用"
       ],
-      "md5": "789384ef6e9398e935b499cf236a4e67",
+      "md5": "4e1cac1cd31705e8aa1b471002f9bdf6",
       "platforms": [
         "win32"
       ],
-      "changelog": "自动上架：DsPlayer 本体（Windows） 0.9.14（2026-10-18 15:12）。"
+      "changelog": "自动上架：DsPlayer 本体（Windows） 1.0.0（2026-10-19 09:32）。"
     },
     {
       "id": "juku-lite",
