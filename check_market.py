@@ -10,7 +10,7 @@
   4. platforms 全量显式（R1）、恰好一词（R2）、词表内 android/win32（R3）
   5. abis 声名词法：缺省（未声明）= arm64-v8a；显式 [] = 不限；词表内
      （MARKET-ABI-ADAPT-DESIGN §六，2026-10-14）
-  6. README 条目表：行数 == 条目数；逐行 id/版本/包名与 market.json 一致
+  6. README 条目表：行数 == 条目数；头部计数行（N = 环境 X + 应用 Y）；逐行 id/版本/包名与 market.json 一致
   7. 顶层 updatedAt 存在且 ISO8601 格式合法
 
 用法：python check_market.py   （在仓库根目录执行）
@@ -214,6 +214,18 @@ def main():
     if len(rows) != len(plugins):
         lines.append(f'README 条目行 {len(rows)} != market.json 条目数 {len(plugins)}')
         ok = False
+    with open(README, encoding='utf-8') as f:
+        m = re.search(r'当前收录（(\d+) 个条目 = 环境 (\d+) \+ 应用 (\d+)）', f.read())
+    if m:
+        total, env_n, app_n = map(int, m.groups())
+        real_env = sum(1 for e in plugins if e.get('category', 'env') == 'env')
+        if (total, env_n, app_n) != (len(plugins), real_env, len(plugins) - real_env):
+            lines.append(f'README 计数行 {total} = {env_n} + {app_n} != 实际 '
+                         f'{len(plugins)} = {real_env} + {len(plugins) - real_env}')
+            ok = False
+    elif '当前收录' in open(README, encoding='utf-8').read():
+        lines.append('README 计数行格式不符（期望「当前收录（N 个条目 = 环境 X + 应用 Y）」）')
+        ok = False
     readme_ids = [r[0] for r in rows]
     missing = set(by_id) - set(readme_ids)
     extra = set(readme_ids) - set(by_id)
@@ -238,8 +250,8 @@ def main():
         if rpkg != url_base:
             lines.append(f'#{rid}：包名不符 README={rpkg} market.json={url_base}')
             ok = False
-    rpt.check('6. README 条目表逐行对账（行数/id/版本/包名）', ok,
-              lines or [f'{len(rows)} 行逐行一致（id/版本/包名）'])
+    rpt.check('6. README 条目表逐行对账（行数/计数行/id/版本/包名）', ok,
+              lines or [f'{len(rows)} 行 + 计数行一致（id/版本/包名）'])
 
     # ---- 7. updatedAt 存在且格式合法 ----
     upd = str(data.get('updatedAt', '') or '')
