@@ -2,7 +2,7 @@
   "name": "DsPlayer 综合插件市场",
   "desc": "dsplayer 插件市场（上游两条线合并镜像 · 只增不删 · 上游删包也能装）",
   "logo": "icons/market.png",
-  "updatedAt": "2026-10-19T15:30:00Z",
+  "updatedAt": "2026-10-21T07:12:00+08:00",
   "plugins": [
     {
       "id": "musick-api",
@@ -771,19 +771,19 @@
       "id": "filebrowser",
       "name": "FileBrowser 文件管理器",
       "author": "filebrowser",
-      "desc": "filebrowser 网页文件管理器（Go 单文件二进制，runtime=binary 以子进程方式由宿主拉起）：启动后浏览器访问 http://<设备IP>:8080 即可浏览/上传/下载/编辑设备文件（根目录 /storage/emulated/0），电视盒子装它就能用电脑/手机管理盒子文件。默认账号 admin / 密码 admin，默认中文界面（构建期注入 quick setup 默认 locale=zh-cn 补丁）；登录后「设置 → 个人资料」可改密码与切换其它语言。数据库随插件目录存放（Android 11+ 的 sdcard 是 FUSE 文件系统，不支持 bbolt 所需的 mmap，实测报 function not implemented）；可在 /storage/emulated/0/dsplayer/server/filebrowser/ 放 .filebrowser.toml 自定义配置。若目录显示为空，请在插件页授予「所有文件访问」存储权限。上游 github.com/filebrowser/filebrowser（项目 2026-09-01 已归档，v2.63.23 为最终版；本包 2.63.24 = 上游末版 + 中文默认补丁重打包）。",
-      "version": "2.63.24",
+      "desc": "filebrowser 网页文件管理器（Go 单文件二进制，runtime=binary 以子进程方式由宿主拉起）：启动后浏览器访问 http://<设备IP>:8080 即可浏览/上传/下载/编辑设备文件（根目录 /storage/emulated/0），电视盒子装它就能用电脑/手机管理盒子文件。默认账号 admin / 密码 admin，默认中文界面（构建期注入 quick setup 默认 locale=zh-cn 补丁）；登录后「设置 → 个人资料」可改密码与切换其它语言。数据库随插件目录存放（Android 11+ 的 sdcard 是 FUSE 文件系统，不支持 bbolt 所需的 mmap，实测报 function not implemented）；可在 /storage/emulated/0/dsplayer/server/filebrowser/ 放 .filebrowser.toml 自定义配置。若目录显示为空，请在插件页授予「所有文件访问」存储权限。上游 github.com/filebrowser/filebrowser（项目 2026-09-01 已归档，v2.63.23 为最终版；本包 2.63.25 = 上游末版 + 中文默认补丁 + UPX 体积压缩）。",
+      "version": "2.63.25",
       "type": "import",
       "category": "app",
-      "size": 14571918,
-      "url": "packages/filebrowser-2.63.24.zip",
+      "size": 11018779,
+      "url": "packages/filebrowser-2.63.25.zip",
       "icon": "icons/filebrowser.png",
       "tags": [
         "文件",
         "服务"
       ],
-      "md5": "b842dc1b1717d31ecf235eb09534e053",
-      "changelog": "2.63.24 重打包（上游 v2.63.23 为归档末版）：构建期 patch 一行让 quick setup 默认 locale=zh-cn——新装/首跑即中文界面（已装用户库不重置，界面语言在「设置 → 个人资料 → 语言」一键切换）；二进制自编译（GOOS=linux CGO_ENABLED=0 -trimpath -s -w，与官方 release 同参数，功能一致，版本标记 2.63.23-dsplayer1）。⚠️ 更新前请先停止插件（插件运行中直接覆盖安装会报 Text file busy/ETXTBSY，本体侧自动处理随下版本发布）。上游 v2.63.23 版权说明见 git 历史。",
+      "md5": "c8b6c1410509a95775871a8427be2192",
+      "changelog": "2.63.25 体积优化（本包 10.5MB，上版 13.9MB，省 24%）：构建链补上 UPX --best --lzma 极致压缩（与仓库其它插件统一的三件套 -trimpath + -s -w + UPX），二进制本体 33MB → 10.5MB。功能与上版完全一致（同源码、同中文默认补丁、同 version 标记 2.63.23-dsplayer1），仅体积变化。真机验证：CM311（armeabi-v7a/Android 9）压缩后二进制可直接执行、服务起后 8080 监听正常、/health 返回 200、登录 JWT 中 locale=zh-cn。⚠️ 更新前请先停止插件（运行中覆盖安装报 Text file busy/ETXTBSY）。",
       "platforms": [
         "android"
       ]
@@ -792,19 +792,19 @@
       "id": "filebrowser-arm32",
       "name": "FileBrowser 文件管理器（32 位设备）",
       "author": "filebrowser",
-      "desc": "filebrowser 网页文件管理器的 32 位（armeabi-v7a）构建，供 32 位安卓设备/老电视盒子使用——64 位设备请装「FileBrowser 文件管理器」。Go 单文件二进制（runtime=binary 以子进程方式由宿主拉起）：启动后浏览器访问 http://<设备IP>:8080 即可浏览/上传/下载/编辑设备文件（根目录 /storage/emulated/0），电视盒子装它就能用电脑/手机管理盒子文件。默认账号 admin / 密码 admin，默认中文界面（构建期注入 quick setup 默认 locale=zh-cn 补丁）；登录后「设置 → 个人资料」可改密码与切换其它语言。配置数据库随插件目录存放（Android 11+ 的 sdcard 是 FUSE 文件系统，不支持 bbolt 所需的 mmap，实测报 function not implemented）；可在 /storage/emulated/0/dsplayer/server/filebrowser/ 放 .filebrowser.toml 自定义配置。若目录显示为空，请在插件页授予「所有文件访问」存储权限。上游 github.com/filebrowser/filebrowser（项目 2026-09-01 已归档，v2.63.23 为最终版；本包 2.63.24 = 上游末版 + 中文默认补丁重打包）。",
-      "version": "2.63.24",
+      "desc": "filebrowser 网页文件管理器的 32 位（armeabi-v7a）构建，供 32 位安卓设备/老电视盒子使用——64 位设备请装「FileBrowser 文件管理器」。Go 单文件二进制（runtime=binary 以子进程方式由宿主拉起）：启动后浏览器访问 http://<设备IP>:8080 即可浏览/上传/下载/编辑设备文件（根目录 /storage/emulated/0），电视盒子装它就能用电脑/手机管理盒子文件。默认账号 admin / 密码 admin，默认中文界面（构建期注入 quick setup 默认 locale=zh-cn 补丁）；登录后「设置 → 个人资料」可改密码与切换其它语言。配置数据库随插件目录存放（Android 11+ 的 sdcard 是 FUSE 文件系统，不支持 bbolt 所需的 mmap，实测报 function not implemented）；可在 /storage/emulated/0/dsplayer/server/filebrowser/ 放 .filebrowser.toml 自定义配置。若目录显示为空，请在插件页授予「所有文件访问」存储权限。上游 github.com/filebrowser/filebrowser（项目 2026-09-01 已归档，v2.63.23 为最终版；本包 2.63.25 = 上游末版 + 中文默认补丁 + UPX 体积压缩）。",
+      "version": "2.63.25",
       "type": "import",
       "category": "app",
-      "size": 14919003,
-      "url": "packages/filebrowser-arm32-2.63.24.zip",
+      "size": 10907101,
+      "url": "packages/filebrowser-arm32-2.63.25.zip",
       "icon": "icons/filebrowser.png",
       "tags": [
         "文件",
         "服务"
       ],
-      "md5": "fd16ef866165fe1a687f4b4736d964de",
-      "changelog": "2.63.24 重打包（arm32 补位包，版本独立线；上游 v2.63.23 为归档末版）：与 64 位包同款——构建期 patch 一行让 quick setup 默认 locale=zh-cn（新装/首跑即中文），二进制自编译（GOOS=linux GOARCH=arm GOARM=7 CGO_ENABLED=0，与官方 release 同参数）。⚠️ 更新前请先停止插件（运行中直接覆盖安装报 Text file busy/ETXTBSY，本体侧自动处理随下版本发布）。CM311（armeabi-v7a/Android 9 移动盒子）真机全链验收过（stop→装→启，首页版本标记 2.63.23-dsplayer1 生效）。",
+      "md5": "146e4db4fda0dd57567e4c634cbc6543",
+      "changelog": "2.63.25 体积优化（本包 10.4MB，上版 14.2MB，省 27%）：与 64 位包同款——构建链补上 UPX --best --lzma（-trimpath + -s -w + UPX 三件套），二进制 35MB → 10.4MB。功能与上版完全一致，仅体积变化。本版在 CM311（armeabi-v7a/Android 9，即该包的目标设备）真机验证：压缩后二进制直接执行成功、服务 8080 监听、health 200、登录 locale=zh-cn。⚠️ 更新前请先停止插件（ETXTBSY）。",
       "abis": [
         "armeabi-v7a"
       ],

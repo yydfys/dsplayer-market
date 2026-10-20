@@ -52,8 +52,8 @@ DsPlayer 插件官方市场仓库：`market.json` 为市场索引（在线安装
 | Go Music DL 音乐下载 | `go-music-dl` | 1.1.1 | import（zip；binary 运行时服务；platforms=android） | `packages/go-music-dl-1.1.1.zip` |
 | OpenList 网盘服务 | `OpenList` | 1.3.0 | import（zip；binary 运行时服务；platforms=android） | `packages/OpenList-1.3.0.zip` |
 | frp 内网穿透客户端 | `frp` | 0.71.0 | import（zip；binary 运行时服务；platforms=android） | `packages/frp-0.71.0.zip` |
-| FileBrowser 文件管理器 | `filebrowser` | 2.63.24 | import（zip；binary 运行时服务；platforms=android） | `packages/filebrowser-2.63.24.zip` |
-| FileBrowser 文件管理器（32 位设备） | `filebrowser-arm32` | 2.63.24 | import（zip；platforms=android；abis=armeabi-v7a，独立版本线） | `packages/filebrowser-arm32-2.63.24.zip` |
+| FileBrowser 文件管理器 | `filebrowser` | 2.63.25 | import（zip；binary 运行时服务；platforms=android） | `packages/filebrowser-2.63.25.zip` |
+| FileBrowser 文件管理器（32 位设备） | `filebrowser-arm32` | 2.63.25 | import（zip；platforms=android；abis=armeabi-v7a，独立版本线） | `packages/filebrowser-arm32-2.63.25.zip` |
 
 ### 引擎类条目版本要点
 
