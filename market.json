@@ -2,7 +2,7 @@
   "name": "DsPlayer 综合插件市场",
   "desc": "dsplayer 插件市场（上游两条线合并镜像 · 只增不删 · 上游删包也能装）",
   "logo": "icons/market.png",
-  "updatedAt": "2026-10-21T11:05:00+08:00",
+  "updatedAt": "2026-10-21T13:16:46Z",
   "plugins": [
     {
       "id": "musick-api",
@@ -1293,6 +1293,55 @@
       ],
       "abis": [
         "arm64-v8a"
+      ]
+    },
+    {
+      "id": "pansou",
+      "name": "PanSou 网盘搜索",
+      "author": "fish2018",
+      "desc": "高性能网盘资源搜索 API 服务（Go 单文件二进制，runtime=binary 由宿主拉起）：内置 Vue Web 前端，默认监听 0.0.0.0:8888，关闭鉴权（AUTH_ENABLED=false）、开启异步插件并预启用 gying 插件；包内已带 Android DNS 修复，env 注入国内 DNS。启动后浏览器访问 http://<设备IP>:8888 搜索网盘资源（支持 TG 频道与插件多源并发、结果智能排序、网盘类型分类）。上游 github.com/fish2018/pansou。",
+      "version": "2.1.2",
+      "type": "import",
+      "category": "app",
+      "size": 9319120,
+      "url": "packages/pansou-2.1.2.zip",
+      "icon": "icons/pansou.png",
+      "tags": [
+        "网盘",
+        "搜索",
+        "服务"
+      ],
+      "md5": "5246b26949be21c3c6d7dea056b01237",
+      "changelog": "首录 2.1.2：包内 plugin.json 原样保留（binaries.android=pansou-android，对应 bin/pansou-android，路径正确）；env 预置 PORT=8888 / CACHE_ENABLED=true / ENABLED_PLUGINS=gying；健康检查 /api/health。图标为本仓自绘（上游仓未提供 logo 资源）。",
+      "abis": [
+        "arm64-v8a"
+      ],
+      "platforms": [
+        "android"
+      ]
+    },
+    {
+      "id": "songloft",
+      "name": "Songloft 音乐服务器",
+      "author": "songloft-org",
+      "desc": "Songloft 自托管音乐服务器（Go 单文件二进制，runtime=binary 由宿主拉起）：内置 Lynx Web 管理界面，默认监听 58091，数据库落插件目录 data/songloft.db，音乐目录默认读 SD 卡 Music；首次启动账号密码均为 admin，启动后请立即修改。浏览器访问 http://<设备IP>:58091 管理。上游 github.com/songloft-org/songloft。",
+      "version": "2.13.2",
+      "type": "import",
+      "category": "app",
+      "size": 9831838,
+      "url": "packages/songloft-2.13.2.zip",
+      "icon": "icons/songloft.png",
+      "tags": [
+        "音乐",
+        "服务"
+      ],
+      "md5": "5c02cd7a6e8d5ad2771dda4c71a242ca",
+      "changelog": "首录 2.13.2：市场上架重打包——包内 plugin.json 的 binaries.android 由 bin/songloft-android 修正为纯文件名 songloft-android（binaries 铁律：本体按 bin/<声明值> 落盘，带 bin/ 前缀会拼成 bin/bin/ 死路径），二进制与上传包逐字节一致；顺带改为压缩打包（26.1MB→9.8MB）。图标取自上游 docs/public/logo.png。",
+      "abis": [
+        "arm64-v8a"
+      ],
+      "platforms": [
+        "android"
       ]
     }
   ]
