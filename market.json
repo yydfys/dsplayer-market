@@ -2,7 +2,7 @@
   "name": "DsPlayer 综合插件市场",
   "desc": "dsplayer 插件市场（上游两条线合并镜像 · 只增不删 · 上游删包也能装）",
   "logo": "icons/market.png",
-  "updatedAt": "2026-10-21T10:40:00+08:00",
+  "updatedAt": "2026-10-21T11:05:00+08:00",
   "plugins": [
     {
       "id": "musick-api",
@@ -435,7 +435,9 @@
       "category": "app",
       "platforms": [
         "android"
-      ]
+      ],
+      "delisted": true,
+      "delistedNote": "已下架：整合包内置子插件版本已落后市场单包（qjs 1.0.1 / 现 1.0.5、ijk 1.0.0 / 现 1.0.2、mediaProxy 1.1.0 / 现 1.2.2、php 1.3.1 / 现 1.3.2），建议直接从市场安装各插件单包。下架标记仅隐藏市场展示，条目与安装包保留在本仓库不删除（已装用户本地记录不受影响），可随时恢复上架。"
     },
     {
       "id": "iptv-ccsh",
