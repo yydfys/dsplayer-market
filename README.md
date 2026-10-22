@@ -2,7 +2,7 @@
 
 DsPlayer 插件官方市场仓库：`market.json` 为市场索引（在线安装入口），`packages/` 存放插件包，`icons/` 存放条目图标。
 
-## 当前收录（36 个条目 = 环境 18 + 应用 18）
+## 当前收录（37 个条目 = 环境 19 + 应用 18）
 
 条目带 `category` 字段（2026-09-20 起）：`env`=环境（引擎/运行时，给壳子供能力，默认归类）；`app`=应用（面向完整使用场景：整合包、直播源包、服务包）。市场内按类别过滤，默认展示「环境」。
 
@@ -23,7 +23,8 @@ DsPlayer 插件官方市场仓库：`market.json` 为市场索引（在线安装
 | PHP 运行时（Windows） | `php-win` | 1.0.1 | import（zip；platforms=win32，minApp 0.9.4） | `packages/php-win-1.0.1.zip` |
 | Python 运行时 | `python` | 1.0.3 | import（zip；platforms=android） | `packages/python-1.0.3.zip` |
 | Python 运行时（Windows） | `python-win` | 1.2.1 | import（zip；platforms=win32，minApp 0.9.4） | `packages/python-win-1.2.1.zip` |
-| Python 爬虫引擎 | `py` | 1.2.1 | **apk**（系统安装；platforms=android） | `packages/DsPlayer-Python-plugin-1.2.1-arm64.apk` |
+| Python 爬虫引擎 | `py` | 1.2.2 | **apk**（系统安装；platforms=android；**兼容 1.0 公开版与 2.x**） | `packages/DsPlayer-Python-plugin-1.2.2-arm64.apk` |
+| ~~Python 爬虫引擎（1.2.1 回滚备用）~~ | `py-legacy` | 1.2.1 | **apk**（系统安装；platforms=android）**⚠️ 已下架**（`delisted: true`——仅作回滚备用不对外展示；1.2.2 已兼容 1.0 与 2.x，去掉标记即可恢复上架） | `packages/DsPlayer-Python-plugin-1.2.1-arm64.apk` |
 | MPV 播放内核 | `mpv` | 1.0.2 | import（apk 直装包可导入；platforms=android） | `packages/mpv-1.0.2.apk` |
 | MPV 播放内核（Windows） | `mpv-win` | 1.0.0 | import（zip；platforms=win32，minApp 0.9.5） | `packages/mpv-win-1.0.0.zip` |
 | IJK 播放内核 | `ijk` | 1.0.2 | **apk**（桥接式必须系统安装；platforms=android） | `packages/ijk-1.0.2.apk` |
