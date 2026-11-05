@@ -2,7 +2,7 @@
   "name": "DsPlayer 综合插件市场",
   "desc": "dsplayer 插件市场（上游两条线合并镜像 · 只增不删 · 上游删包也能装）",
   "logo": "icons/market.png",
-  "updatedAt": "2026-11-05T08:50:00+08:00",
+  "updatedAt": "2026-11-06T00:55:00+08:00",
   "plugins": [
     {
       "id": "musick-api",
@@ -1365,6 +1365,26 @@
       ],
       "delisted": true,
       "delistedNote": "回滚备用档：仅保留安装包不对外展示。1.2.2 与 1.0 公开版/2.x 均兼容（接口未变、调用方白名单含旧包名），正常升级即可；此包供 1.2.2 万一出问题时临时回退使用，去掉 delisted 标记即可恢复上架。"
+    },
+    {
+      "id": "bytevc2",
+      "name": "ByteVC2 软解",
+      "author": "hjdhnx",
+      "desc": "Exo 内核的 ByteVC2（B 站 bv2C 私有编码）视频软解兜底：普通设备 MediaCodec 不识别该编码，播放 B 站 bv2C 封装直链自动软解，其余内容零影响仍走硬解。libbyteVC2dec 0.9.7.1（字节系私有解码库，非开源，分发风险自负）。仅支持 arm64 设备，apk 直装。",
+      "version": "1.0.0",
+      "type": "apk",
+      "size": 923690,
+      "url": "packages/bytevc2-1.0.0.apk",
+      "icon": "icons/bytevc2.png",
+      "tags": [
+        "解码"
+      ],
+      "md5": "7e13c9de8397630fa13cda298cf9237c",
+      "category": "env",
+      "changelog": "1.0.0 首版：bv2C 封装嗅探 Extractor + libbyteVC2dec 软解 renderer（GL YUV 出帧），需本体带 ByteVc2DecoderLoader 的 debug/release 包。",
+      "platforms": [
+        "android"
+      ]
     }
   ]
 }
