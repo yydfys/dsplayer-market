@@ -54,9 +54,21 @@ def archive(arch_path, src_file):
     return 1
 
 
+# Directories never mirrored from a source repo:
+#   .git    - VCS noise.
+#   .github - would drag a source repo's own CI workflows into this repo. Adding
+#             or editing a workflow file requires the `workflows` permission, which
+#             the Actions token does not have, so one upstream .github/workflows/*.yml
+#             made EVERY union push fail with
+#             "refusing to allow a GitHub App to create or update workflow ... without
+#             workflows permission" (field report: 10 consecutive failures from
+#             2026-11-06 to 2026-11-09, market.json frozen the whole time).
+SKIP_DIRS = (".git", ".github")
+
+
 def walk_files(root):
     for dirpath, dirnames, filenames in os.walk(root):
-        dirnames[:] = [d for d in dirnames if d != ".git"]
+        dirnames[:] = [d for d in dirnames if d not in SKIP_DIRS]
         for name in filenames:
             full = os.path.join(dirpath, name)
             yield os.path.relpath(full, root).replace(os.sep, "/"), full
