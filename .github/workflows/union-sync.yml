@@ -57,6 +57,9 @@ jobs:
           git config user.name  fork-sync
           git config user.email fork-sync@local
           git add -A
+          # 保险：工作流文件永远不进提交。推送 .github/workflows/* 需要 workflows
+          # 权限，内置 token 没有 —— 一旦源仓的 CI 文件被镜像进来，整次 push 会被拒。
+          git reset -q -- .github 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "✅ 无变化，跳过提交"
             exit 0
