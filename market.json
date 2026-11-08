@@ -2,7 +2,7 @@
   "name": "DsPlayer 综合插件市场",
   "desc": "dsplayer 插件市场（上游两条线合并镜像 · 只增不删 · 上游删包也能装）",
   "logo": "icons/market.png",
-  "updatedAt": "2026-11-06T05:05:31Z",
+  "updatedAt": "2026-11-08T23:58:00+08:00",
   "plugins": [
     {
       "id": "musick-api",
@@ -213,7 +213,7 @@
         "服务"
       ],
       "md5": "40088e25287afff72f59d08e14ff0044",
-      "changelog": "v1.0.3：DNS shim 提速根修——原实现每次域名解析先走 musl 原版（无 /etc/resolv.conf 时按默认 nameserver 127.0.0.1 黑洞死等 5 秒超时）才回落自查询，独立服务（央视直播代理类等）播放链每步白等 5 秒导致「列表正常、播放全败」；现 IP/hosts 原版直通、真域名直接自查询（毫秒级 + 5 分钟缓存），原版仅作全败兜底。v1.0.2：鸿蒙 4.2 兼容两连修——①TMPDIR/HOME 显式注入到插件内可写目录（部分 ROM app 进程无 HOME 且无 /tmp，pip 下载/解包报 No usable temporary directory）；②musl 平台探测 spawn 失败防御（部分 ROM app 域 fork/exec 受限报 /lib/ld-musl-aarch64.so.1 ENOENT 整包装包失败，现失败一律回落伪造标签照常装 musllinux wheel）。v1.0.1：pip 平台标签修复（musllinux wheel 识别）。v1.0.0 首发。已装 1.0.0/1.0.1 的用户从市场更新后重试「爬虫一键装」即可。",
+      "changelog": "v1.0.4：新增解码器实况上报——桥在 prepared 与首帧解码时点读 IjkMediaInfo 发 decoder 事件，宿主三点面板「解码方式」显示硬解/软解实况（如 硬解播放中（设备解码器名）/ 软解播放中（avcodec(ffmpeg)）），与 Exo/MPV 三内核对齐；需配合新宿主包。v1.0.3：硬解恒软解根修 + bytevc2 软解。",
       "platforms": [
         "android"
       ],
@@ -266,17 +266,17 @@
       "name": "MPV 播放内核",
       "author": "hjdhnx",
       "desc": "提供全功能 MPV 内核（v1.2.6）：新增 DASH（MPD）原生播放支持、超分 shader、截图、广协议支持。导入后以应用内组件形态生效，可在「插件」页切换播放内核。",
-      "version": "1.0.3",
+      "version": "1.0.4",
       "type": "import",
-      "size": 16729667,
-      "url": "packages/mpv-1.0.3.apk",
+      "size": 16729627,
+      "url": "packages/mpv-1.0.4.apk",
       "icon": "icons/mpv.png",
       "tags": [
         "内核"
       ],
-      "md5": "2e189729e9ef3ca2d84fadfdc63c5766",
+      "md5": "d839ff4061e0424b2fda17a2c906ecf1",
       "category": "env",
-      "changelog": "1.0.3 libmpv 重编接入 ByteVC2 软解：B 站 bv2C 私有编码（bv2C 封装/hvc1 壳伪装）mpv 内核直接软解播放（仅 arm64；随带 libbyteVC2dec.so，DT_NEEDED 递归加载）；x86_64 维持旧版。需本体 v0.7.0+（mpv 内核）。",
+      "changelog": "1.0.4 修复 1.0.3 的 bytevc2 私有 codec id 两雷：0x21002 撞官方 VNULL（连续枚举自动值）、desc 表按 id 升序 bsearch 下表尾插小值必失配——定稿 0x21004（ANULL 后空位）+ desc 表尾插入；真机 mpv 内核 Selected decoder: bytevc2 全片播放验证。1.0.3 首版接入 ByteVC2 软解。",
       "abis": [
         "arm64-v8a",
         "x86_64"
@@ -311,18 +311,18 @@
       "id": "ijk",
       "name": "IJK 播放内核",
       "author": "hjdhnx",
-      "desc": "IJKPlayer 播放内核插件（CarGuo 修正版 ijkplayer，FFmpeg 全协议 + MediaCodec 硬解 + HTTPS/16K page size）。安装后在设置「播放器内核」或播放器底栏切换 IJK；与 Exo/MPV 三内核任切。桥接式插件（必须 APK 安装，不支持 zip 导入）。",
-      "version": "1.0.2",
+      "desc": "IJKPlayer 播放内核插件（CarGuo 修正版 ijkplayer，FFmpeg 全协议 + MediaCodec 硬解 + HTTPS/16K page size + bytevc2 私有编码软解）。安装后在设置「播放器内核」或播放器底栏切换 IJK；与 Exo/MPV 三内核任切。桥接式插件（必须 APK 安装，不支持 zip 导入）。",
+      "version": "1.0.4",
       "type": "apk",
-      "size": 4143300,
-      "url": "packages/ijk-1.0.2.apk",
+      "size": 4231780,
+      "url": "packages/ijk-1.0.4.apk",
       "icon": "icons/ijk.png",
       "tags": [
         "内核"
       ],
-      "md5": "3f257329fbd9de8095963e2fe5a99fdc",
+      "md5": "2c03e3758ef316a9a5116fd0a175a9a5",
       "category": "env",
-      "changelog": "v1.0.2：直播协议白名单修复——桥 options 透传 FORMAT 类 setOption，protocol_whitelist 注入放行 rtmp/rtmps/rtsp/srt（ffmpeg 编译白名单默认不含，rtmp 频道此前报 Protocol not on whitelist 黑屏；ijkplayer Java 层 setDataSource 对 rtmp 强写默认白名单，注入须在其后覆盖——真机 mediaMTX 彩条流三内核验收通过）。升本体配合：直播 rtmp 频道 Exo 缺省自动切 MPV/IJK。",
+      "changelog": "v1.0.3：双修——①硬解恒软解根修：mediacodec-default_name 判定链首项显式设置 + mediacodec 系 option PLAYER/CODEC 双字典写（此前 720p 软解 CPU 102%，现 64%）；②自编 libijkffmpeg.so 带 bytevc2 软解（B 站 bv2C 私有编码，随包 libbyteVC2dec 0.9.7.1；openssl 静态内嵌直连原始链接）——真机播 bv2C 测试片出帧正常，logcat 铁证 VideoCodec: avcodec, bytevc2。v1.0.2：直播协议白名单修复（rtmp 系放行）。",
       "platforms": [
         "android"
       ]
@@ -1371,17 +1371,17 @@
       "name": "ByteVC2 软解",
       "author": "hjdhnx",
       "desc": "Exo 内核的 ByteVC2（B 站 bv2C 私有编码）视频软解兜底：普通设备 MediaCodec 不识别该编码，播放 B 站 bv2C 封装直链自动软解，其余内容零影响仍走硬解。libbyteVC2dec 0.9.7.1（字节系私有解码库，非开源，分发风险自负）。仅支持 arm64 设备，apk 直装。",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "type": "apk",
       "size": 923690,
-      "url": "packages/bytevc2-1.0.0.apk",
+      "url": "packages/bytevc2-1.0.1.apk",
       "icon": "icons/bytevc2.png",
       "tags": [
         "解码"
       ],
-      "md5": "7e13c9de8397630fa13cda298cf9237c",
+      "md5": "f73be2c91c65181d9f4db2446f0624f8",
       "category": "env",
-      "changelog": "1.0.0 首版：bv2C 封装嗅探 Extractor + libbyteVC2dec 软解 renderer（GL YUV 出帧），需本体带 ByteVc2DecoderLoader 的 debug/release 包。",
+      "changelog": "v1.0.1：整合上游 Java 层双修复（随宿主包生效，本包为配套版本元数据；so 经真机定责维持原版）——①快速切集/切清晰度崩溃根修：decode/flush/release 串行化 + flush 后等关键帧重建参考基线（mc_dec reference index abort）；②画面缩小居中四周黑边根修：GL viewport 改用 EGL surface 实际尺寸。需重出宿主包配合。",
       "platforms": [
         "android"
       ]
@@ -1390,20 +1390,44 @@
       "id": "docker-vm",
       "name": "Docker 虚拟机（QEMU/arm64）",
       "author": "hjdhnx",
-      "desc": "独立的 QEMU arm64 虚拟机，开箱即用完整 Docker（29.9）+ Docker Compose（5.6）：内置 daocloud 镜像加速，SSH(:9922)，端口转发。启动后是一个完整 Alpine Linux VM，可在内嵌终端跑 docker/compose。大体积包（109.8MB）走 GitHub Release 资产分发，客户端经加速代理拉取后跳系统安装器安装。applicationId com.dsplayer.vm。",
-      "version": "1.0.0",
+      "desc": "独立的 QEMU arm64 虚拟机，开箱即用完整 Docker（29.9）+ Docker Compose（5.6）+ Buildx 镜像构建：内置 daocloud 镜像加速，SSH(:9922)，端口转发。启动后是一个完整 Alpine Linux VM，可在内嵌终端跑 docker/compose/docker build。后台保活：VM 运行期间保持前台可见（悬浮圆点），不被 ROM 后台 CPU 限额压速。大体积包（约125MB）走 GitHub Release 资产分发，客户端经加速代理拉取后跳系统安装器安装。applicationId com.dsplayer.vm。",
+      "version": "1.1.0",
       "type": "apk",
       "category": "app",
       "pkg": "com.dsplayer.vm",
-      "size": 115151910,
-      "url": "https://github.com/hjdhnx/dsplayer-plugin/releases/download/docker-vm-1.0.0/docker-vm-1.0.0.apk",
+      "size": 131349294,
+      "url": "https://github.com/hjdhnx/dsplayer-plugin/releases/download/docker-vm-1.1.0/docker-vm-1.1.0.apk",
       "icon": "icons/docker-vm.png",
       "tags": [
         "虚拟机",
         "容器"
       ],
-      "md5": "d6a2fc341939ec3244c6cb48d941d2c9",
-      "changelog": "首录：QEMU arm64 虚拟机（独立 APK，applicationId com.dsplayer.vm）。开箱即用 Docker 29.9 + Compose 5.6，内置 daocloud 镜像加速开箱可拉镜像；SSH:9922 与端口转发齐备。包体 109.8MB，走 GitHub Release 资产分发（客户端 GitHub 加速代理兼容待端内验证）。",
+      "md5": "a576ce55c772577b4c32c3ed5091efac",
+      "changelog": "v1.1.0：①后台 CPU 限额根修——部分 ROM（小米 MIUI/HyperOS 等）把不可见窗口的后台进程压到约 1/20 CPU，即使已豁免电池优化也会让后台 docker/SSH/端口转发不可达；现 VM 运行期间默认在屏幕边缘显示悬浮保活圆点（保持前台可见，从根上不落后台配额档），点按回应用、设置可关，首次启动引导授权。②恢复 docker buildx——修掉 1.0.x 裁剪 buildx 后 docker build 回退 legacy builder 对 BuildKit 语法（--mount/heredoc/syntax）报不兼容的问题。包体积 109.8MB→125.3MB（buildx 回归所致）。v1.0.1：后台保活修复——新增 WiFi 高能锁（WIFI_MODE_FULL_HIGH_PERF）防止息屏后网络休眠导致 SSH/docker/端口转发从外部连不上；首次启动主动请求忽略电池优化（Doze/App-Standby 豁免）。系统正常退出清理行为不变。",
+      "platforms": [
+        "android"
+      ],
+      "abis": [
+        "arm64-v8a"
+      ]
+    },
+    {
+      "id": "captcha-bypass",
+      "name": "验证码识别服务",
+      "author": "Hiram-Wong",
+      "desc": "OCR 验证码识别 HTTP 服务（上游 Hiram-Wong/captcha-bypass，Bun 打包 onnx 本地推理）：POST /detect /ocr /rotate /slide 四类验证码接口（内置 OpenAPI 文档），模型随包内置（detect/ocr_pp/ocr_dddd/rotate），默认端口 7788（PORT 环境变量可改）。供源脚本/外部工具识别验证码用。仅 arm64-v8a；包体 210.6MB 走 GitHub Release 资产分发。需本体 ≥1.0.6（bin/ 附属文件随包落位 + abis 安装期门配套）。",
+      "version": "1.0.0",
+      "type": "import",
+      "category": "env",
+      "size": 220810961,
+      "url": "https://github.com/hjdhnx/dsplayer-plugin/releases/download/captcha-bypass-1.0.0/captcha-bypass-1.0.0.zip",
+      "tags": [
+        "OCR",
+        "服务"
+      ],
+      "md5": "fcd643d0cc7aba4d8646b623a0456b20",
+      "minApp": "1.0.6",
+      "changelog": "首录 1.0.0：Bun 打包的 OCR 验证码服务（上游 Hiram-Wong/captcha-bypass），bin/models/ 四 onnx 模型随包落位；需本体 1.0.6 起（binary 插件附属文件随包安装 + abis 安装期校验）。",
       "platforms": [
         "android"
       ],
