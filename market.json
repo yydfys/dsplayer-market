@@ -2,7 +2,7 @@
   "name": "DsPlayer 综合插件市场",
   "desc": "dsplayer 插件市场（上游两条线合并镜像 · 只增不删 · 上游删包也能装）",
   "logo": "icons/market.png",
-  "updatedAt": "2026-11-12T08:07:25Z",
+  "updatedAt": "2026-11-12T10:59:18Z",
   "plugins": [
     {
       "id": "musick-api",
@@ -869,21 +869,21 @@
       "name": "DsPlayer 本体（Windows）",
       "author": "DsPlayer",
       "desc": "影视聚合壳本体（Windows 64 位）。下载 7z 压缩包，解压即用。",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "type": "apk",
       "category": "app",
-      "size": 26690364,
-      "url": "apk/DsPlayer-1.0.0-windows-x64.7z",
+      "size": 25501864,
+      "url": "apk/DsPlayer-1.1.0-b108-windows-x64.7z",
       "icon": "icons/dsplayer.png",
       "tags": [
         "本体",
         "应用"
       ],
-      "md5": "4e1cac1cd31705e8aa1b471002f9bdf6",
+      "md5": "7c76a4b22a28ee66e9183bfc1825d736",
       "platforms": [
         "win32"
       ],
-      "changelog": "自动上架：DsPlayer 本体（Windows） 1.0.0（2026-10-19 09:32）。"
+      "changelog": "自动上架：DsPlayer 本体（Windows） 1.1.0（2026-11-12 18:59）。"
     },
     {
       "id": "juku-lite",
