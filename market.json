@@ -2,7 +2,7 @@
   "name": "DsPlayer 综合插件市场",
   "desc": "dsplayer 插件市场（上游两条线合并镜像 · 只增不删 · 上游删包也能装）",
   "logo": "icons/market.png",
-  "updatedAt": "2026-11-13T12:33:22Z",
+  "updatedAt": "2026-11-13T14:46:08Z",
   "plugins": [
     {
       "id": "musick-api",
@@ -819,25 +819,25 @@
       "name": "DsPlayer 本体",
       "author": "DsPlayer",
       "desc": "影视聚合壳本体（Android）。插件式架构：播放器内核、爬虫引擎、源全部以插件形态安装。本条目永远只指向最新版（Android 禁止降级覆盖安装，低版本须先卸载再装）；历史版本保留在 NAS 共用目录，可自行下载后手动安装。",
-      "version": "1.1.2",
+      "version": "1.1.3",
       "type": "apk",
       "category": "app",
       "pkg": "com.dsplayer.ds_player",
-      "size": 19115514,
-      "url": "apk/DsPlayer-1.1.2-b110-arm64.apk",
+      "size": 19122866,
+      "url": "apk/DsPlayer-1.1.3-b111-arm64.apk",
       "icon": "icons/dsplayer.png",
       "tags": [
         "本体",
         "应用"
       ],
-      "md5": "a5bcc11bb3fab2bea96085c682662022",
+      "md5": "1c510ea69ce28818e9a9e8a062b21e0f",
       "abis": [
         "arm64-v8a"
       ],
       "platforms": [
         "android"
       ],
-      "changelog": "自动上架：DsPlayer 本体 1.1.2（2026-11-13 20:04）。"
+      "changelog": "自动上架：DsPlayer 本体 1.1.3（2026-11-13 22:45）。"
     },
     {
       "id": "dsplayer-arm32",
@@ -890,21 +890,21 @@
       "name": "DsPlayer 本体（Windows 安装包）",
       "author": "DsPlayer",
       "desc": "影视聚合壳本体（Windows）安装包版：下载 exe 双击装到系统（自动关联文件、创建开始菜单与桌面快捷方式、可从「应用和功能」卸载）。与 id dsplayer-win（Windows 7z 绿色包，解压即用、免安装）二选一即可，互不冲突，本条目永远只指向最新版。",
-      "version": "1.1.2",
+      "version": "1.1.3",
       "type": "apk",
       "category": "app",
-      "size": 29218650,
-      "url": "apk/DsPlayer-1.1.2-windows-x64-setup.exe",
+      "size": 29227346,
+      "url": "apk/DsPlayer-1.1.3-windows-x64-setup.exe",
       "icon": "icons/dsplayer.png",
       "tags": [
         "本体",
         "应用"
       ],
-      "md5": "617ff1275d86afc98ed9b6ee90ff0ef5",
+      "md5": "da35169bf99619d09b18faf896d156c0",
       "platforms": [
         "win32"
       ],
-      "changelog": "自动上架：DsPlayer 本体（Windows 安装包） 1.1.2（2026-11-13 20:33）。"
+      "changelog": "自动上架：DsPlayer 本体（Windows 安装包） 1.1.3（2026-11-13 22:45）。"
     },
     {
       "id": "juku-lite",
