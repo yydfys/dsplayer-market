@@ -2,7 +2,7 @@
   "name": "DsPlayer 综合插件市场",
   "desc": "dsplayer 插件市场（上游两条线合并镜像 · 只增不删 · 上游删包也能装）",
   "logo": "icons/market.png",
-  "updatedAt": "2026-11-13T12:04:34Z",
+  "updatedAt": "2026-11-13T12:33:22Z",
   "plugins": [
     {
       "id": "musick-api",
@@ -890,21 +890,21 @@
       "name": "DsPlayer 本体（Windows 安装包）",
       "author": "DsPlayer",
       "desc": "影视聚合壳本体（Windows）安装包版：下载 exe 双击装到系统（自动关联文件、创建开始菜单与桌面快捷方式、可从「应用和功能」卸载）。与 id dsplayer-win（Windows 7z 绿色包，解压即用、免安装）二选一即可，互不冲突，本条目永远只指向最新版。",
-      "version": "1.1.1",
+      "version": "1.1.2",
       "type": "apk",
       "category": "app",
-      "size": 29219263,
-      "url": "apk/DsPlayer-1.1.1-windows-x64-setup.exe",
+      "size": 29218650,
+      "url": "apk/DsPlayer-1.1.2-windows-x64-setup.exe",
       "icon": "icons/dsplayer.png",
       "tags": [
         "本体",
         "应用"
       ],
-      "md5": "1190b1680162a126036f4beb74318e90",
+      "md5": "617ff1275d86afc98ed9b6ee90ff0ef5",
       "platforms": [
         "win32"
       ],
-      "changelog": "首发：Windows 安装包（exe）1.1.1，与 7z 绿色包并存；安装版走系统注册表，卸载请用「应用和功能」。"
+      "changelog": "自动上架：DsPlayer 本体（Windows 安装包） 1.1.2（2026-11-13 20:33）。"
     },
     {
       "id": "juku-lite",
