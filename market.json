@@ -2,7 +2,7 @@
   "name": "DsPlayer 综合插件市场",
   "desc": "dsplayer 插件市场（上游两条线合并镜像 · 只增不删 · 上游删包也能装）",
   "logo": "icons/market.png",
-  "updatedAt": "2026-11-13T14:46:08Z",
+  "updatedAt": "2026-11-13T15:09:21Z",
   "plugins": [
     {
       "id": "musick-api",
@@ -1476,6 +1476,29 @@
       "platforms": [
         "win32"
       ]
+    },
+    {
+      "id": "tgdrama",
+      "name": "TG影视库",
+      "author": "tgdrama",
+      "desc": "Telegram 短剧媒体库：PC 扫码 / 手机号验证码登录（按设备默认、可切换），自动采集频道视频；多清晰度（默认自动）+ 流水线预读 + 头部固定缓存 + 播放期后台退让。二进制运行时插件，启动后本机监听 127.0.0.1:5278。",
+      "version": "1.38.0",
+      "type": "import",
+      "size": 9269900,
+      "url": "packages/tgdrama-1.38.0.zip",
+      "md5": "e728fadce05190b1690587597fb36fd1",
+      "platforms": [
+        "android"
+      ],
+      "abis": [
+        "arm64-v8a"
+      ],
+      "category": "app",
+      "tags": [
+        "服务",
+        "影视"
+      ],
+      "changelog": "v1.38.0：首次入库。包内 plugin.json 声明 runtime=binary、参数 `-port 5278 -bind 127.0.0.1`、健康检查 GET /（端口 5278，8s 超时）；二进制为 arm64-v8a ELF，仅面向 Android。"
     }
   ]
 }
