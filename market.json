@@ -2,7 +2,7 @@
   "name": "DsPlayer 综合插件市场",
   "desc": "dsplayer 插件市场（上游两条线合并镜像 · 只增不删 · 上游删包也能装）",
   "logo": "icons/market.png",
-  "updatedAt": "2026-11-15T06:46:18Z",
+  "updatedAt": "2026-11-15T09:57:12Z",
   "plugins": [
     {
       "id": "musick-api",
@@ -1482,11 +1482,11 @@
       "name": "TG影视库",
       "author": "tgdrama",
       "desc": "Telegram 短剧媒体库：PC 扫码 / 手机号验证码登录（按设备默认、可切换），自动采集频道视频；多清晰度（默认自动）+ 流水线预读 + 头部固定缓存 + 播放期后台退让。二进制运行时插件，启动后本机监听 127.0.0.1:5278。",
-      "version": "1.42.5",
+      "version": "1.42.6",
       "type": "import",
-      "size": 9323011,
-      "url": "packages/tgdrama-1.42.5.zip",
-      "md5": "11f63b9688e1e880dd6f9b0dc0f8102a",
+      "size": 9468499,
+      "url": "packages/tgdrama-1.42.6.zip",
+      "md5": "999ce4f9e70a562e0bd36252e891ffc5",
       "platforms": [
         "android"
       ],
@@ -1498,7 +1498,7 @@
         "服务",
         "影视"
       ],
-      "changelog": "v1.42.5：二进制更新（tgdrama-android 27,721,986 B，arm64-v8a ELF）；plugin.json 声明与启动参数未变（runtime=binary、`-port 5278 -bind 127.0.0.1`、健康检查 GET / 端口 5278 / 8s 超时）。包体积 9323011 B。"
+      "changelog": "v1.42.6：二进制更新（tgdrama-android 28180738 B，arm64-v8a ELF）；plugin.json 声明与启动参数未变（runtime=binary、`-port 5278 -bind 127.0.0.1`、健康检查 GET / 端口 5278 / 8s 超时）。包体积 9468499 B。"
     }
   ]
 }
