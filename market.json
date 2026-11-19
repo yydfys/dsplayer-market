@@ -2,7 +2,7 @@
   "name": "DsPlayer 综合插件市场",
   "desc": "dsplayer 插件市场（上游两条线合并镜像 · 只增不删 · 上游删包也能装）",
   "logo": "icons/market.png",
-  "updatedAt": "2026-11-18",
+  "updatedAt": "2026-11-19",
   "plugins": [
     {
       "id": "musick-api",
@@ -1641,6 +1641,54 @@
       ],
       "abis": [
         "armeabi-v7a"
+      ]
+    },
+    {
+      "id": "mpv-arm32",
+      "name": "MPV 播放内核（32 位设备）",
+      "author": "hjdhnx",
+      "desc": "MPV 播放内核的 32 位（armeabi-v7a）构建，供 32 位安卓设备/老电视使用；导入后以应用内组件形态生效，可在「插件」页切换播放内核。64 位设备请装「MPV 播放内核」。不含 DASH（MPD）与 bv2C 软解（32 位无相应解码库，MPD 自动回落 Exo 内核）。",
+      "version": "1.0.0",
+      "type": "import",
+      "size": 7220816,
+      "url": "packages/mpv-arm32-1.0.0.apk",
+      "icon": "icons/mpv.png",
+      "tags": [
+        "内核"
+      ],
+      "md5": "7027dd4911891b67c9445463bab41187",
+      "category": "env",
+      "changelog": "首版（arm32 补位包，版本独立线）：三件套 so 单源取 media_kit_libs_android_video 钉定的 libmpv-android-video-build 20260824 v7a 构建（mpv v0.41.0，与 64 位包 helper/event_loop 同源同字节；fork 的 bytevc2 版 v7a 硬链 32 位缺失的解码库故不可用）。需 DsPlayer 1.1.10+（插件中心 ABI 矩阵开放 v7a）。",
+      "abis": [
+        "armeabi-v7a"
+      ],
+      "minApp": "1.1.10",
+      "platforms": [
+        "android"
+      ]
+    },
+    {
+      "id": "ijk-arm32",
+      "name": "IJK 播放内核（32 位设备）",
+      "author": "hjdhnx",
+      "desc": "IJKPlayer 播放内核的 32 位（armeabi-v7a）构建（CarGuo 修正版，FFmpeg 全协议 + MediaCodec 硬解）。安装后在设置「播放器内核」或播放器底栏切换 IJK；与 Exo/MPV 三内核任切。桥接式插件必须 APK 安装，不支持 zip 导入。64 位设备请装「IJK 播放内核」。不含 bv2C 软解（32 位无该解码库）。",
+      "version": "1.0.0",
+      "type": "apk",
+      "size": 4101378,
+      "url": "packages/ijk-arm32-1.0.0.apk",
+      "icon": "icons/ijk.png",
+      "tags": [
+        "内核"
+      ],
+      "md5": "8d82da325f32accd6e6429269c5f2e62",
+      "category": "env",
+      "changelog": "首版（arm32 补位包，版本独立线）：v7a 三 so 取 gsyvideoplayer-ex_so 13.2.1 官方 AAR 自带 armeabi-v7a（无 bv2C 软解；硬解/直播协议白名单等 1.0.2-1.0.6 能力同承主线）。需 DsPlayer 1.1.10+（插件中心 ABI 矩阵开放 v7a）。",
+      "abis": [
+        "armeabi-v7a"
+      ],
+      "minApp": "1.1.10",
+      "platforms": [
+        "android"
       ]
     }
   ]
