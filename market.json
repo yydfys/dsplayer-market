@@ -2,7 +2,7 @@
   "name": "DsPlayer 综合插件市场",
   "desc": "dsplayer 插件市场（上游两条线合并镜像 · 只增不删 · 上游删包也能装）",
   "logo": "icons/market.png",
-  "updatedAt": "2026-11-20T11:26:07Z",
+  "updatedAt": "2026-11-21T09:53:08Z",
   "plugins": [
     {
       "id": "musick-api",
@@ -822,25 +822,25 @@
       "name": "DsPlayer 本体",
       "author": "DsPlayer",
       "desc": "影视聚合壳本体（Android）。插件式架构：播放器内核、爬虫引擎、源全部以插件形态安装。本条目永远只指向最新版（Android 禁止降级覆盖安装，低版本须先卸载再装）；历史版本保留在 NAS 共用目录，可自行下载后手动安装。",
-      "version": "1.1.10",
+      "version": "1.9.4",
       "type": "apk",
       "category": "app",
       "pkg": "com.dsplayer.ds_player",
-      "size": 20082472,
-      "url": "apk/DsPlayer-1.1.10-b118-arm64.apk",
+      "size": 17794270,
+      "url": "apk/tv-release.apk",
       "icon": "icons/dsplayer.png",
       "tags": [
         "本体",
         "应用"
       ],
-      "md5": "33eb470bae0567a071c5cf0f6bbcaf94",
+      "md5": "42c8b5c7fa471c9927bbcc4fbeed9c9b",
       "abis": [
         "arm64-v8a"
       ],
       "platforms": [
         "android"
       ],
-      "changelog": "自动上架：DsPlayer 本体 1.1.10（2026-11-20 19:24）。"
+      "changelog": "自动上架：DsPlayer 本体 1.9.4（2026-11-21 17:52）。"
     },
     {
       "id": "dsplayer-arm32",
