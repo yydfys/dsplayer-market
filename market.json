@@ -2,7 +2,7 @@
   "name": "DsPlayer 综合插件市场",
   "desc": "dsplayer 插件市场（上游两条线合并镜像 · 只增不删 · 上游删包也能装）",
   "logo": "icons/market.png",
-  "updatedAt": "2026-11-21T10:01:27Z",
+  "updatedAt": "2026-11-22T03:10:00+08:00",
   "plugins": [
     {
       "id": "musick-api",
@@ -1252,7 +1252,7 @@
       "id": "douban-pansou",
       "name": "豆瓣盘搜",
       "author": "JmwPower",
-      "desc": "豆瓣影视聚合盘搜规则：豆瓣分类/搜索聚合夸克/UC/百度网盘资源，封面与详细资料推送到原生播放页。需先安装「多聚网盘」。",
+      "desc": "多聚网盘配套源，豆瓣影视聚合盘搜规则：豆瓣分类/搜索聚合夸克/UC/百度网盘资源，封面与详细资料推送到原生播放页。需先安装「多聚网盘」。",
       "version": "1.1.1",
       "type": "source",
       "category": "app",
@@ -1484,26 +1484,24 @@
     },
     {
       "id": "tgdrama",
-      "name": "TG影视库",
-      "author": "tgdrama",
-      "desc": "Telegram 短剧媒体库：PC 扫码 / 手机号验证码登录（按设备默认、可切换），自动采集频道视频；多清晰度（默认自动）+ 流水线预读 + 头部固定缓存 + 播放期后台退让。二进制运行时插件，启动后本机监听 127.0.0.1:5278。",
-      "version": "1.42.6",
+      "name": "TG短剧库",
+      "author": "JmwPower",
+      "desc": "Telegram 短剧媒体库：自动采集、多清晰度、CDN 分发播放、边播边落盘、限流倒计时恢复。安卓端后台服务。",
+      "version": "1.45.2",
       "type": "import",
-      "size": 9468499,
-      "url": "packages/tgdrama-1.42.6.zip",
-      "md5": "999ce4f9e70a562e0bd36252e891ffc5",
+      "size": 9945284,
+      "url": "packages/tgdrama-1.45.2.zip",
+      "icon": "icons/duoju.png",
+      "tags": [
+        "网络",
+        "服务"
+      ],
+      "changelog": "v1.45.2：播放器控件无操作自动隐藏由 3 秒缩到 1.2 秒，播放画面更干净。v1.45.1：修复关闭播放器后详情页「继续播放」不跟随实际播放集数，看完最新一集且有更新时自动指向下一集。v1.45.0：设置页新增「运行日志」「服务诊断」面板（复制/清空/关闭，最新在最上）。v1.44.0：剧集数冗余列排序、标签精简、取块闸门分级、只读连接池、孤封面清理。v1.43.0：修复长时间运行后点播一直缓冲（信号量泄漏），三路并发预读提速，限流快速失败 503。",
+      "md5": "772452b34e42370ac5446d99b6b822e7",
+      "category": "env",
       "platforms": [
         "android"
-      ],
-      "abis": [
-        "arm64-v8a"
-      ],
-      "category": "app",
-      "tags": [
-        "服务",
-        "影视"
-      ],
-      "changelog": "v1.42.6：二进制更新（tgdrama-android 28180738 B，arm64-v8a ELF）；plugin.json 声明与启动参数未变（runtime=binary、`-port 5278 -bind 127.0.0.1`、健康检查 GET / 端口 5278 / 8s 超时）。包体积 9468499 B。"
+      ]
     },
     {
       "id": "jar",
@@ -1759,6 +1757,119 @@
         "android"
       ],
       "abis": []
+    },
+    {
+      "id": "tgdrama-source",
+      "name": "TG短剧库配套源",
+      "author": "JmwPower",
+      "desc": "TG短剧库 Web 规则源：Telegram 短剧媒体库播放界面。需先安装「TG短剧库」后台服务。",
+      "version": "1.0.0",
+      "type": "source",
+      "category": "app",
+      "url": "packages/tgdrama-source.zip",
+      "size": 48523,
+      "md5": "cc3ee84fc5646a526813660ac9c1d726",
+      "changelog": "v1.0.0：TG短剧库 Web 规则源，对接本地后台服务播放。",
+      "tags": [
+        "本地源",
+        "短剧"
+      ],
+      "icon": "icons/duoju.png",
+      "platforms": [
+        "android",
+        "win32"
+      ]
+    },
+    {
+      "id": "djnode",
+      "name": "多聚聚合-node版",
+      "author": "JmwPower",
+      "desc": "多聚聚合 Node.js 版（duoju-super-node）：短剧/漫画/音乐/听书聚合服务，默认端口 5689。",
+      "version": "1.0.0",
+      "type": "server",
+      "category": "app",
+      "url": "packages/djnode-1.0.0.zip",
+      "size": 5270926,
+      "md5": "43efecc93fa3ff369e16c602a6563753",
+      "changelog": "v1.0.0：多聚聚合服务端 Node.js 版，集成短剧/漫画/音乐/听书聚合，端口 5689。",
+      "tags": [
+        "服务",
+        "聚合"
+      ],
+      "icon": "icons/duoju.png",
+      "platforms": [
+        "android",
+        "win32"
+      ]
+    },
+    {
+      "id": "legado-server-node",
+      "name": "阅读图书馆·Node",
+      "author": "jmwpower",
+      "desc": "Legado（开源阅读）服务端 Node 移植版（Fastify + SQLite）：Web 书架、本地书 TXT/EPUB 导入、封面直出、正文插图与漫画图床代理、Z-Library 图书馆，TVBox / DsPlayer 订阅 /sub 可直接填；默认 5268，纯 JS sqlite 无原生模块，Android / Windows 通用。v1.3.0 按官方 Legado 规则引擎对齐重写：新增 XPath 规则、{$.xxx} JSONPath 模板、非规范 JSON 链接参数、官方 charset 语义（请求编码/响应解码分离）、URL 选项与占位符修正；附带 Go 网络引擎（win-x64 / linux-x64 / linux-arm64，自动走系统代理与浏览器 TLS 指纹，解决 Node 直连被重置；引擎缺失时自动用 Node 原生）。需先装 nodejs 运行时（Node >= 22.5），数据写在包外 legado-server-data/，覆盖升级不丢书。**不预置任何书源**：装好后到「源管理 → 源仓库」或贴 JSON / 地址导入（导入保留原分组）。",
+      "version": "1.3.0",
+      "type": "server",
+      "category": "app",
+      "url": "packages/legado-server-node-1.3.0.zip",
+      "size": 12654180,
+      "md5": "7ef96318d8e1e7c08fd6b382e82f9ce8",
+      "changelog": "v1.3.0：以官方 Legado（LegadoTeam/legado）AnalyzeUrl / AnalyzeByXPath / AnalyzeByJSonPath / OkHttpUtils 为准做的兼容性重写，解决「3000+ 书源只有 19 个能用」：①网络层改为 Go 编写的网络引擎（utls 浏览器 TLS 指纹 + HTTP/2 + 自动识别系统代理），Node 直连被重置的站点恢复可达，实测可达源 616 → 1403；引擎不可用或显式关闭时自动回退 Node 原生链路，无代理环境同样可用。②修 URL 链接参数解析（,{...} 切片偏移错误导致 POST / charset / body 全失效）、补 <key>/<keyword> 占位符与页码映射。③新增 XPath 规则引擎（//tag、[@attr=]、[n]、text()、@attr、following-sibling:: 等），补 {$.xxx}/{$.xxx} JSONPath 模板求值（官方 innerRule 语义）。④对齐官方 GSON 宽松解析：单引号 / 无引号键 / 注释等非规范链接参数。⑤charset 只用于请求参数编码，响应解码按 HTTP 头 → HTML meta → 显式 charset 兜底，修复 UTF-8 页面被按 GBK 解成乱码。⑥修详情页/目录页 JS 上下文传递导致的崩溃。实测（导入 V3 全部 3101 源 → 去重 2237 → 可达 1403 → 真实链路搜索→详情→目录）：可用源 19 → 172；干净解包按插件实跑：0 源、导入保组、搜索 100/20/30/50/74 条、目录 5/30/30/30/20 章、多章正文 1.7–2.3k 字无乱码、/sub 与 vod 搜索 304 条 / 详情 20 章 / 播放串正常。",
+      "tags": [
+        "服务",
+        "书源",
+        "聚合"
+      ],
+      "icon": "icons/legado.png",
+      "platforms": [
+        "android",
+        "win32"
+      ]
+    },
+    {
+      "id": "legado-node",
+      "name": "阅读源·Node聚合",
+      "author": "江湖",
+      "desc": "3101 个乐读书源聚合成一套 T3/T4 接口，规则引擎带 JS 运行时 + XPath + JSONPath（js:/@js、java.ajax、Jsoup、模板变量都支持）。分类只留有频道页的源并按真实体检结果排序，分页按真实条数返回，全源搜索有总预算、慢源自动沉底，新增 /diag?t=下标 单源诊断。自带管理面板（浏览内容 / 源管理 / 源仓库三页签，仓库一键导入、批量体检、启用停用）、/legado_html.json 给「阅读」直接导入、/sub 订阅、/novel 正文接口，默认端口 13000，无第三方依赖。需先安装 nodejs 运行时插件。",
+      "version": "3.0.0",
+      "type": "server",
+      "category": "app",
+      "url": "packages/legado-node-3.0.0.zip",
+      "size": 3835570,
+      "md5": "c8cf8b00cfe2100fd246b9ec32ab1e72",
+      "changelog": "v3.0.0：换新内核（JS 运行时 / XPath / JSONPath），3000+ 书源全部随包带上；修掉客户端筛选参数被当频道抓导致整页空、假 999 页、java.getElements 重复包装报错、体检结果按下标错位；分类剔除只能搜索的源并按体检排序，搜索加总预算与失败拉黑，新增 /diag 单源诊断与 /health-report 体检报告；管理面板（源管理 / 源仓库）保留。",
+      "tags": [
+        "服务",
+        "书源",
+        "聚合"
+      ],
+      "icon": "icons/legado.png",
+      "platforms": [
+        "android",
+        "win32"
+      ]
+    },
+    {
+      "id": "legado-node-source",
+      "name": "阅读源·Node聚合配套源",
+      "author": "江湖",
+      "desc": "配合「阅读源·Node聚合」服务使用的 py 书源（hipy 引擎）：一个源看全部乐读书源，分类=书源、书=条目、正文按 novel:// 交付，数据全部走本机 Node 服务（默认 http://127.0.0.1:13000）。需先安装同市场的服务包，服务没起来时源不可用。文件名带 [书] 标签（TVBox 壳子据此归入阅读类）。",
+      "version": "1.1.0",
+      "type": "source",
+      "category": "app",
+      "url": "packages/legado-node-source-1.1.0.zip",
+      "size": 7774,
+      "md5": "d36849aaf75840c67f4d2d3ddaeb0328",
+      "changelog": "v1.1.0：跟随服务端 v3 重写——搜索改用正确的 ac=list（以前靠 fallthrough 偶然能跑）、extend 只放行频道地址、首页分类并发探测；新增 only_working（只显示体检通过的书源）、search_only、max_ep、mode=webview/direct 等 ext 选项。",
+      "tags": [
+        "书源",
+        "阅读",
+        "配套"
+      ],
+      "icon": "icons/legado.png",
+      "platforms": [
+        "android",
+        "win32"
+      ]
     }
   ]
 }
