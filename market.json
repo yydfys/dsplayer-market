@@ -2,7 +2,7 @@
   "name": "DsPlayer 综合插件市场",
   "desc": "dsplayer 插件市场（上游两条线合并镜像 · 只增不删 · 上游删包也能装）",
   "logo": "icons/market.png",
-  "updatedAt": "2026-11-21T09:54:52Z",
+  "updatedAt": "2026-11-21T09:56:41Z",
   "plugins": [
     {
       "id": "musick-api",
@@ -1739,9 +1739,9 @@
     },
     {
       "id": "universalinstaller-tv",
-      "name": "通用安装器（TV 版）",
+      "name": "通用安装器 Universal Installer",
       "author": "pwhs",
-      "desc": "TV/电视盒子侧的 APK 安装器（Universal Installer 1.9.4）：leanback 桌面图标 + 遥控器可操作，从 U 盘/局域网/NAS 或浏览器下载的 apk 直接点装，绕过电视系统自带的安装入口限制，适合给电视盒子装 DsPlayer 本体与各插件。与 DsPlayer 无进程耦合，纯第三方应用直装（声明 pkg 包名，可感知系统侧卸载）。全 ABI（arm64-v8a/armeabi-v7a/x86/x86_64），包体 17.0MB 走 packages/ 常规分发。",
+      "desc": "电视端 APK 安装器（Universal Installer 1.9.4）：leanback 桌面图标、遥控器可操作的独立安装工具，把 U 盘 / 局域网 / NAS 或浏览器下载的 apk 直接点装，绕过电视系统自带安装入口的限制。纯第三方独立应用（包名 app.pwhs.universalinstaller.tv），与任何壳子/插件/市场无进程耦合，声明 pkg 包名可感知系统侧卸载。全 ABI（arm64-v8a / armeabi-v7a / x86 / x86_64），包体 17.0MB 走 packages/ 常规分发。",
       "version": "1.9.4",
       "type": "apk",
       "category": "app",
@@ -1751,11 +1751,10 @@
       "icon": "icons/universalinstaller-tv.png",
       "tags": [
         "工具",
-        "安装器",
-        "TV"
+        "安装器"
       ],
       "md5": "42c8b5c7fa471c9927bbcc4fbeed9c9b",
-      "changelog": "首录：Universal Installer TV 版 1.9.4（versionCode 24，包名 app.pwhs.universalinstaller.tv，声明 leanback 必需、minSdk 24 / targetSdk 36）。全 ABI 单包，17.0MB 走 packages/ 常规分发。",
+      "changelog": "首录：Universal Installer 1.9.4（versionCode 24，包名 app.pwhs.universalinstaller.tv，声明 leanback 必需、minSdk 24 / targetSdk 36）。全 ABI 单包，17.0MB 走 packages/ 常规分发。",
       "platforms": [
         "android"
       ],
