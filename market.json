@@ -2,7 +2,7 @@
   "name": "DsPlayer 综合插件市场",
   "desc": "dsplayer 插件市场（上游两条线合并镜像 · 只增不删 · 上游删包也能装）",
   "logo": "icons/market.png",
-  "updatedAt": "2026-11-21T09:53:08Z",
+  "updatedAt": "2026-11-21T09:54:52Z",
   "plugins": [
     {
       "id": "musick-api",
@@ -822,25 +822,25 @@
       "name": "DsPlayer 本体",
       "author": "DsPlayer",
       "desc": "影视聚合壳本体（Android）。插件式架构：播放器内核、爬虫引擎、源全部以插件形态安装。本条目永远只指向最新版（Android 禁止降级覆盖安装，低版本须先卸载再装）；历史版本保留在 NAS 共用目录，可自行下载后手动安装。",
-      "version": "1.9.4",
+      "version": "1.1.10",
       "type": "apk",
       "category": "app",
       "pkg": "com.dsplayer.ds_player",
-      "size": 17794270,
-      "url": "apk/tv-release.apk",
+      "size": 20082472,
+      "url": "apk/DsPlayer-1.1.10-b118-arm64.apk",
       "icon": "icons/dsplayer.png",
       "tags": [
         "本体",
         "应用"
       ],
-      "md5": "42c8b5c7fa471c9927bbcc4fbeed9c9b",
+      "md5": "33eb470bae0567a071c5cf0f6bbcaf94",
       "abis": [
         "arm64-v8a"
       ],
       "platforms": [
         "android"
       ],
-      "changelog": "自动上架：DsPlayer 本体 1.9.4（2026-11-21 17:52）。"
+      "changelog": "自动上架：DsPlayer 本体 1.1.10（2026-11-20 19:24）。"
     },
     {
       "id": "dsplayer-arm32",
@@ -1736,6 +1736,33 @@
       ],
       "minApp": "1.1.11",
       "category": "env"
+    },
+    {
+      "id": "universalinstaller-tv",
+      "name": "通用安装器（TV 版）",
+      "author": "pwhs",
+      "desc": "TV/电视盒子侧的 APK 安装器（Universal Installer 1.9.4）：leanback 桌面图标 + 遥控器可操作，从 U 盘/局域网/NAS 或浏览器下载的 apk 直接点装，绕过电视系统自带的安装入口限制，适合给电视盒子装 DsPlayer 本体与各插件。与 DsPlayer 无进程耦合，纯第三方应用直装（声明 pkg 包名，可感知系统侧卸载）。全 ABI（arm64-v8a/armeabi-v7a/x86/x86_64），包体 17.0MB 走 packages/ 常规分发。",
+      "version": "1.9.4",
+      "type": "apk",
+      "category": "app",
+      "pkg": "app.pwhs.universalinstaller.tv",
+      "size": 17794270,
+      "url": "packages/universalinstaller-tv-1.9.4.apk",
+      "icon": "icons/universalinstaller-tv.png",
+      "tags": [
+        "工具",
+        "安装器",
+        "TV"
+      ],
+      "md5": "42c8b5c7fa471c9927bbcc4fbeed9c9b",
+      "changelog": "首录：Universal Installer TV 版 1.9.4（versionCode 24，包名 app.pwhs.universalinstaller.tv，声明 leanback 必需、minSdk 24 / targetSdk 36）。全 ABI 单包，17.0MB 走 packages/ 常规分发。",
+      "platforms": [
+        "android"
+      ],
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a"
+      ]
     }
   ]
 }
