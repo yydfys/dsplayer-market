@@ -2,7 +2,7 @@
   "name": "DsPlayer 综合插件市场",
   "desc": "dsplayer 插件市场（上游两条线合并镜像 · 只增不删 · 上游删包也能装）",
   "logo": "icons/market.png",
-  "updatedAt": "2026-11-22T09:44:41+08:00",
+  "updatedAt": "2026-11-22T10:49:32+08:00",
   "plugins": [
     {
       "id": "musick-api",
@@ -1866,6 +1866,29 @@
         "配套"
       ],
       "icon": "icons/legado.png",
+      "platforms": [
+        "android",
+        "win32"
+      ]
+    },
+    {
+      "id": "legado-shelf-library",
+      "name": "书架 · 图书馆",
+      "author": "JmwPower",
+      "desc": "只保留书架与 Z-Library 图书馆的服务端插件 v1.0.0：图书馆电子书由服务端直接下载落盘并自动入库（解析 EPUB 元数据与封面），支持书架分组、批量管理、本地电子书导入与封面缓存，不含在线阅读等阅读功能。",
+      "version": "1.0.0",
+      "type": "server",
+      "category": "app",
+      "url": "packages/legado-shelf-library-1.0.0.zip",
+      "size": 11350819,
+      "md5": "bf33ada4f767b9284c9bf159e15c12b3",
+      "changelog": "v1.0.0：书架 + Z-Library 图书馆；图书馆下载改为服务端落盘并自动入库；支持 EPUB/PDF/TXT 等本地导入、私密分组与批量管理。",
+      "tags": [
+        "服务",
+        "书架",
+        "图书馆"
+      ],
+      "icon": "icons/shelf-library.png",
       "platforms": [
         "android",
         "win32"
